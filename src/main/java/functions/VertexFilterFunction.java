@@ -6,14 +6,12 @@ import org.gradoop.common.model.impl.pojo.Vertex;
 
 
 public class VertexFilterFunction implements FilterFunction<Vertex> {
-  public boolean filter(Vertex vertex) throws Exception {
+  public boolean filter(Vertex vertex) {
 
-    boolean pass =  vertex.getLabel().equals("Person") ||
-            vertex.getLabel().equals("Forum") ||
-            vertex.getLabel().equals("Tag") ||
-            vertex.getLabel().equals("City") ||
-            vertex.getLabel().equals("Post");
-
-    return pass;
+    return vertex.getLabel().equals("person") ||
+            vertex.getLabel().equals("tag") ||
+            vertex.getLabel().equals("city") ||
+            vertex.getLabel().equals("post") ||
+            vertex.getLabel().equals("country");
   }
 }
